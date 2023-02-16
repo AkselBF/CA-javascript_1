@@ -5,10 +5,13 @@
 // "https://gutendex.com/books"
 // "https://gutendex.com/books/?page=2"
 
-const url = "https://gutendex.com/";
+const url = "https://gutendex.com/books/";
+
+let page = 1;
+let searchValue = "";
 
 async function getBooks() {
-  const response = await fetch(url);
+  const response = await fetch(url + "?page" + page);
   const result = await response.json();
   console.log(result);
 }
@@ -18,22 +21,49 @@ async function getSearch() {
   const result = await response.json();
   console.log(result);
 
-  result.data.forEach((character) => addCharacter(character));
+  result.results.forEach((book) => addBook(book));
 }
 
 getBooks();
 
-function addCharacter(character) {
-  const container = document.querySelector(".container");
+function addBook(book) {
+  const container = document.querySelector(".books");
   const bookContainer = document.createElement("div");
   const bookName = document.createElement("h3");
   const img = document.createElement("img");
-  img.src = character.imageUrl;
+  img.src = book.formats["image/jpeg"];
 
-  bookName.textContent = character.name;
-  bookContainer.append(characterName, img);
-  container.append(characterContainer);
+  bookName.textContent = book.title;
+  bookContainer.append(bookName, img);
+  container.append(bookContainer);
 }
+
+const prev = document.querySelector("#previous");
+const next = document.querySelector("#next");
+const searchBtn = document.querySelector("#search");
+
+searchBtn.addEventListener("click", () => {
+  searchValue = document.querySelector("#search-input").value;
+  console.log(searchValue);
+  document.querySelector(".books").innerHTML = "";
+  getSearch();
+});
+
+prev.addEventListener("click", () => {
+  page--;
+  document.querySelector(".books").innerHTML = "";
+
+  getBooks();
+});
+
+next.addEventListener("click", () => {
+  page++;
+  document.querySelector(".books").innerHTML = "";
+
+  getBooks();
+});
+
+
 
 /*
 const loader = document.querySelector(".loading p");
