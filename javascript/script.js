@@ -11,13 +11,13 @@ let page = 1;
 let searchValue = "";
 
 async function getBooks() {
-  const response = await fetch(url + "?page" + page);
+  const response = await fetch(url + "?page=" + page);
   const result = await response.json();
   console.log(result);
 }
 
 async function getSearch() {
-  const response = await fetch(url + "?name=" + searchValue);
+  const response = await fetch(url + "?name=" + searchValue); // Try "?search="
   const result = await response.json();
   console.log(result);
 
@@ -29,7 +29,7 @@ getBooks();
 function addBook(book) {
   const container = document.querySelector(".books");
   const bookContainer = document.createElement("div");
-  const bookName = document.createElement("h3");
+  const bookName = document.createElement("h2");
   const img = document.createElement("img");
   img.src = book.formats["image/jpeg"];
 
