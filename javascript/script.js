@@ -13,6 +13,28 @@ async function getBooks() {
   console.log(result);
 }
 
+async function getSearch() {
+  const response = await fetch(url + "?name=" + searchValue);
+  const result = await response.json();
+  console.log(result);
+
+  result.data.forEach((character) => addCharacter(character));
+}
+
+getBooks();
+
+function addCharacter(character) {
+  const container = document.querySelector(".container");
+  const bookContainer = document.createElement("div");
+  const bookName = document.createElement("h3");
+  const img = document.createElement("img");
+  img.src = character.imageUrl;
+
+  bookName.textContent = character.name;
+  bookContainer.append(characterName, img);
+  container.append(characterContainer);
+}
+
 /*
 const loader = document.querySelector(".loading p");
 
