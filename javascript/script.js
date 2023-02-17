@@ -17,7 +17,7 @@ async function getBooks() {
 }
 
 async function getSearch() {
-  const response = await fetch(url + "?name=" + searchValue); // Try "?search="
+  const response = await fetch(url + "?search=" + searchValue); // Try "?search="
   const result = await response.json();
   console.log(result);
 

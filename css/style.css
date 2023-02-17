@@ -1,15 +1,18 @@
 body {
-  background-color: #24507b;
-}
-
-img {
-  margin: auto;
-  width: 300px;
-  text-align: center;
+  background-color: #464646;
 }
 
 h2 {
   text-align: center;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e7db34;
+}
+
+img {
+  margin: 0 auto 60px auto;
+  width: 300px;
+  display: flex;
 }
 
 .books {
@@ -20,6 +23,7 @@ h2 {
 .book_title {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+  font-size: 50px;
   margin: 10px auto 30px auto;
-  color: #00ffff;
+  color: #e7db34;
 }
