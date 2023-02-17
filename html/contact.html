@@ -5,8 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact page</title>
+
+  <link rel="stylesheet" href="../css/contact.css">
+  <script defer src="../javascript/contact.js"></script>
 </head>
 <body>
-  
+  <form>
+    <label for="fullname">Name:</label>
+    <input
+      type="text"
+      id="fullname"
+    />
+
+    <label for="subject">Subject:</label>
+    <input
+      type="number"
+      id="subject"
+    />
+
+    <label for="email">E-mail:</label>
+    <input
+      type="text"
+      id="email"
+    />
+
+    <label for="address">Address:</label>
+    <input
+      type="text"
+      id="address"
+    />
+
+    <button disabled>Submit</button>
+  </form>
+  <div class="users"></div>
 </body>
 </html>

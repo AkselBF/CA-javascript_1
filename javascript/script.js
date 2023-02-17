@@ -23,6 +23,7 @@ async function getSearch() {
 
   result.results.forEach((book) => addBook(book));
 }
+// If an image doesn't show up, try the "try" and "catch" method.
 
 getBooks();
 
