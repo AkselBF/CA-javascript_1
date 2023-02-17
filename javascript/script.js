@@ -17,7 +17,7 @@ async function getBooks() {
 }
 
 async function getSearch() {
-  const response = await fetch(url + "?search=" + searchValue); // Try "?search="
+  const response = await fetch(url + "?search=" + searchValue);
   const result = await response.json();
   console.log(result);
 
@@ -31,12 +31,23 @@ function addBook(book) {
   const container = document.querySelector(".books");
   const bookContainer = document.createElement("div");
   const bookName = document.createElement("h2");
+  const bookLink = document.createElement("a");
   const img = document.createElement("img");
   img.src = book.formats["image/jpeg"];
 
   bookName.textContent = book.title;
   bookContainer.append(bookName, img);
   container.append(bookContainer);
+
+  bookLink.href = "html/details.html";
+  bookLink.append(img);
+  bookContainer.append(bookLink);
+  bookLink.addEventListener("click", () => {
+    localStorage.setItem("id", book.id);
+    console.log(localStorage.getItem("id"));
+  });
+  
+  document.querySelector("body").append(bookContainer);
 }
 
 const prev = document.querySelector("#previous");

@@ -35,17 +35,30 @@ img {
 }
 
 #previous, #next {
+  font-weight: bold;
   color: #000000;
   background-color: #d1c521;
+  border-color: #e7db34;
   border-radius: 5px;
   width: 80px;
 }
 
 .boxname {
   font-weight: bold;
-  color: #ffffff;
+  color: #e4e4e4;
 }
 
 .box {
   border-radius: 5px;
+  background-color: #e4e4e4;
+  border-color: #ffffff;
+}
+
+#search {
+  font-weight: bold;
+  color: #000000;
+  background-color: #d1c521;
+  border-color: #e7db34;
+  border-radius: 5px;
+  width: 50px;
 }
