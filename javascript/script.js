@@ -39,13 +39,26 @@ function addBook(book) {
   bookContainer.append(bookName, img);
   container.append(bookContainer);
 
-  bookLink.href = "html/details.html";
+  bookLink.href = `html/details.html?id=${book.id}`;
   bookLink.append(img);
   bookContainer.append(bookLink);
   bookLink.addEventListener("click", () => {
     localStorage.setItem("id", book.id);
     console.log(localStorage.getItem("id"));
   });
+
+  /*
+  const book_details = json.results;
+
+  book_details.forEach(function(book) {
+    bookContainer.innerHTML += `
+    <a href="details.html?id=${book.id}" class="specific_book">
+      <div class="image"></div>
+      <div class="details">
+        <h3 class="name">${book.name}</h3>
+      </div>
+    </a>`;
+  });*/
   
   document.querySelector("body").append(bookContainer);
 }
