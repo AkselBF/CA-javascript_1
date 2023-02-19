@@ -34,6 +34,12 @@ img {
   color: #e7db34;
 }
 
+.contact_link {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #34c9e7;
+  text-decoration: none;
+}
+
 #previous, #next {
   font-weight: bold;
   color: #000000;
@@ -41,6 +47,7 @@ img {
   border-color: #e7db34;
   border-radius: 5px;
   width: 80px;
+  margin-top: 30px;
 }
 
 .boxname {

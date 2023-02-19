@@ -1,6 +1,5 @@
 // Form and submission
 
-/*
 const fullName = document.querySelector("#fullname");
 const subject = document.querySelector("#subject");
 const email = document.querySelector("#email");
@@ -43,7 +42,7 @@ document.addEventListener("keyup", (event) => {
   }
 });
 
-function ageCheck() {
+function subjectCheck() {
   const temp = parseInt(subject.value);
   if (temp >= 1 && temp <= 130) {
     return true;
@@ -62,7 +61,6 @@ function emailCheck() {
 }
 
 function addressCheck() {
-  //const regex = //;
-  return regex.test(address.value);
+  const adrName = /\w\s\w/;
+  return adrName.test(address.value);
 }
-*/
