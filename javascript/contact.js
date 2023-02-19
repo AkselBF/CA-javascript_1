@@ -1,9 +1,10 @@
-
+// Form and submission
 
 /*
 const fullName = document.querySelector("#fullname");
-const age = document.querySelector("#age");
+const subject = document.querySelector("#subject");
 const email = document.querySelector("#email");
+const address = document.querySelector("#address");
 const btn = document.querySelector("button");
 const form = document.querySelector("form");
 const users = document.querySelector(".users")
@@ -11,8 +12,9 @@ const users = document.querySelector(".users")
 form.addEventListener("submit", (event) => {
   const user = {
     name: fullName.value,
-    age: age.value,
+    subject: subject.value,
     email: email.value,
+    address: address.value,
   };
   createUser(user);
   event.preventDefault();
@@ -20,18 +22,20 @@ form.addEventListener("submit", (event) => {
 
 function createUser(user) {
   const element = document.createElement("div");
-  const heading = document.createElement("h2");
-  const ageParagraph = document.createElement("p");
+  const heading = document.createElement("h3");
+  const subjectParagraph = document.createElement("p");
   const emailParagraph = document.createElement("p");
+  const addressParagraph = document.createElement("p");
   heading.textContent = user.name;
-  ageParagraph.textContent = user.age;
+  ageParagraph.textContent = user.subject;
   emailParagraph.textContent = user.email;
-  element.append(heading, ageParagraph, emailParagraph);
+  addressParagraph.textContent = user.address;
+  element.append(heading, subjectParagraph, emailParagraph, addressParagraph);
   users.append(element);
 }
 
 document.addEventListener("keyup", (event) => {
-  if (nameCheck() && ageCheck() && emailCheck()) {
+  if (nameCheck() && subjectCheck() && emailCheck() && addressCheck()) {
     console.log("Value in all fields");
     btn.disabled = false;
   } else {
@@ -40,7 +44,7 @@ document.addEventListener("keyup", (event) => {
 });
 
 function ageCheck() {
-  const temp = parseInt(age.value);
+  const temp = parseInt(subject.value);
   if (temp >= 1 && temp <= 130) {
     return true;
   }
@@ -55,5 +59,10 @@ function nameCheck() {
 function emailCheck() {
   const regEx = /@/;
   return regEx.test(email.value);
+}
+
+function addressCheck() {
+  //const regex = //;
+  return regex.test(address.value);
 }
 */
