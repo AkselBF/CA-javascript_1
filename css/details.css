@@ -1,0 +1,9 @@
+body {
+  background-color: #ffffff;
+}
+
+.details_image {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: 340px 500px;
+}

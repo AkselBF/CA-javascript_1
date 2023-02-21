@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This page is all about the user's contact 
+  information">
   <title>Contact page</title>
 
   <link rel="stylesheet" href="../css/contact.css">
@@ -17,6 +19,7 @@
       id="fullname"
       placeholder="Full name"
     />
+    <div class="form_error" id="fullname_error">Please enter your full name</div>
 
     <label id="subject_box" for="subject">Subject:</label>
     <input
@@ -24,6 +27,7 @@
       id="subject"
       placeholder="Subject number"
     />
+    <div class="form_error" id="subject_error">Please enter your subject number</div>
 
     <label id="email_box" for="email">E-mail:</label>
     <input
@@ -31,6 +35,7 @@
       id="email"
       placeholder="E-mail_address"
     />
+    <div class="form_error" id="email_error">Please enter your E-mail</div>
 
     <label id="address_box" for="address">Address:</label>
     <input
@@ -38,6 +43,7 @@
       id="address"
       placeholder="Home_address"
     />
+    <div class="form_error" id="address_error">Please enter your home address</div>
 
     <button class="submit_button" disabled>Submit</button>
   </form>

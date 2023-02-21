@@ -22,13 +22,16 @@ async function fetchBook() {
 fetchBook();
 
 function createHTML(data) {
+  //console.log(data.results[0].formats["image/jpeg"])
   detailContainer.innerHTML = `
-  <h1 class="specific_book_title">${data.title}</h1>
+  <h1 class="specific_book_title">${data.results[0].title}</h1>
   <div class="details_image"
-    style="background-image: url('${data.formats}')">
+    style="background-image: url('${data.results[0].formats["image/jpeg"]}')">
   </div>
   <div class="details_author">
-    ${data.authors}
+    ${data.results[0].authors[0].name}
+    ${data.results[0].authors[0].birth_year}
+    ${data.results[0].authors[0].death_year}
   </div>`;
 }
 

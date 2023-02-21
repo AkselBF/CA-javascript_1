@@ -1,11 +1,11 @@
 body {
-  background-color: #afafaf;
+  background-color: #e4e4e4;
 }
 
 .contact_form {
   display: flex;
   flex-direction: column;
-  background-color: #e4e4e4;
+  background-color: #ffffff;
   border-radius: 20px;
   margin: 50px 3% 50px 3%;
 }

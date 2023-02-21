@@ -1,9 +1,16 @@
 // Form and submission
-
 const fullName = document.querySelector("#fullname");
+const nameError = document.querySelector("#fullname_error");
+
 const subject = document.querySelector("#subject");
+const subjectError = document.querySelector("#subject_error");
+
 const email = document.querySelector("#email");
+const mailError = document.querySelector("#email_error");
+
 const address = document.querySelector("#address");
+const addressError = document.querySelector("#address_error");
+
 const btn = document.querySelector("button");
 const form = document.querySelector("form");
 const users = document.querySelector(".users")
@@ -16,8 +23,37 @@ form.addEventListener("submit", (event) => {
     address: address.value,
   };
   createUser(user);
+  console.log(user);
   event.preventDefault();
 });
+
+function validateForm(event) {
+  event.preventDefault();
+
+  if (checkLength(fullName.value) === true) {
+    nameError.style.display = "none";
+  } else {
+    nameError.style.display = "block";
+  }
+
+  if (checkLength(subject.value) === true) {
+    subjectError.style.display = "none";
+  } else {
+    subjectError.style.display = "block";
+  }
+
+  if (checkLength(email.value) === true) {
+    mailError.style.display = "none";
+  } else {
+    mailError.style.display = "block";
+  }
+
+  if (checkLength(address.value) === true) {
+    addressError.style.display = "none";
+  } else {
+    addressError.style.display = "block";
+  }
+}
 
 function createUser(user) {
   const element = document.createElement("div");
@@ -31,6 +67,14 @@ function createUser(user) {
   addressParagraph.textContent = user.address;
   element.append(heading, subjectParagraph, emailParagraph, addressParagraph);
   users.append(element);
+}
+
+function checkLength(value, len) {
+  if (value.trim().length > len) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 document.addEventListener("keyup", (event) => {
