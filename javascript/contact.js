@@ -22,13 +22,15 @@ form.addEventListener("submit", (event) => {
     email: email.value,
     address: address.value,
   };
-  createUser(user);
+  
   console.log(user);
+  alert(user);
   event.preventDefault();
+  //createUser(user);
 });
 
-function validateForm(event) {
-  event.preventDefault();
+function validateForm() {
+  preventDefault();
 
   if (checkLength(fullName.value) === true) {
     nameError.style.display = "none";
@@ -86,25 +88,48 @@ document.addEventListener("keyup", (event) => {
   }
 });
 
+function nameCheck() {
+  const regex = /[a-zA-Z ]+$/;
+  return regex.test(fullName.value);
+}
+
 function subjectCheck() {
+  for (let i = 0; i < subject.value; i++) {
+    if (subject.value > 10) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  /*
   const temp = parseInt(subject.value);
   if (temp >= 1 && temp <= 130) {
     return true;
   }
-  return false;
-}
-
-function nameCheck() {
-  const regex = /\w\s\w/;
-  return regex.test(fullName.value);
+  return false;*/
 }
 
 function emailCheck() {
+  const regEx = /\S+@\S+\.\S+/;
+  const matchedPattern = regEx.test(email.value);
+  return matchedPattern;
+  /*
   const regEx = /@/;
-  return regEx.test(email.value);
+  return regEx.test(email.value);*/
 }
 
 function addressCheck() {
   const adrName = /\w\s\w/;
   return adrName.test(address.value);
 }
+
+/*
+const form = document.querySelector(".contact_form");
+
+form.onsubmit = function(event) {
+  event.preventDefault();
+
+  console.log(event);
+
+  const name = document.querySelector("#")
+}*/

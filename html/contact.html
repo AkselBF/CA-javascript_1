@@ -13,6 +13,17 @@
 </head>
 <body>
   <form class="contact_form">
+    <!--
+    <div>
+      <label id="name_box" for="fullname">Name:</label>
+      <input
+        type="text"
+        id="fullname"
+        placeholder="Full name"
+      />
+      <div class="form_error" id="fullname_error">Please enter your full name</div>
+    </div>-->
+
     <label id="name_box" for="fullname">Name:</label>
     <input
       type="text"
@@ -21,13 +32,35 @@
     />
     <div class="form_error" id="fullname_error">Please enter your full name</div>
 
+    <!--
+    <div>
+      <label id="subject_box" for="subject">Subject:</label>
+      <input
+        type="number"
+        id="subject"
+        placeholder="Subject number"
+      />
+      <div class="form_error" id="subject_error">Please enter your subject number</div>
+    </div>-->
+
     <label id="subject_box" for="subject">Subject:</label>
     <input
-      type="number"
+      type="text"
       id="subject"
       placeholder="Subject number"
     />
     <div class="form_error" id="subject_error">Please enter your subject number</div>
+
+    <!--
+    <div>
+      <label id="email_box" for="email">E-mail:</label>
+      <input
+        type="text"
+        id="email"
+        placeholder="E-mail_address"
+      />
+      <div class="form_error" id="email_error">Please enter your E-mail</div>
+    </div>-->
 
     <label id="email_box" for="email">E-mail:</label>
     <input
@@ -37,13 +70,24 @@
     />
     <div class="form_error" id="email_error">Please enter your E-mail</div>
 
+    <!--
+    <div>
+      <label id="address_box" for="address">Address:</label>
+      <input
+        type="text"
+        id="address"
+        placeholder="Home_address"
+      />
+      <div class="form_error" id="address_error">Please enter your home address</div>
+    </div>-->
+
     <label id="address_box" for="address">Address:</label>
     <input
       type="text"
       id="address"
       placeholder="Home_address"
     />
-    <div class="form_error" id="address_error">Please enter your home address</div>
+    <div class="form_error" id="address_error">Please enter your home address</div>-->
 
     <button class="submit_button" disabled>Submit</button>
   </form>

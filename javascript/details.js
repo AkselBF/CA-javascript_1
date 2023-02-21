@@ -29,9 +29,9 @@ function createHTML(data) {
     style="background-image: url('${data.results[0].formats["image/jpeg"]}')">
   </div>
   <div class="details_author">
-    ${data.results[0].authors[0].name}
-    ${data.results[0].authors[0].birth_year}
-    ${data.results[0].authors[0].death_year}
+    Name: ${data.results[0].authors[0].name}
+    Birth year: ${data.results[0].authors[0].birth_year}
+    Death year: ${data.results[0].authors[0].death_year}
   </div>`;
 }
 
