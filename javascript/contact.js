@@ -29,6 +29,72 @@ form.addEventListener("submit", (event) => {
   //createUser(user);
 });
 
+function createUser(user) {
+  const element = document.createElement("div");
+  const heading = document.createElement("h3");
+  const subjectParagraph = document.createElement("p");
+  const emailParagraph = document.createElement("p");
+  const addressParagraph = document.createElement("p");
+  heading.textContent = user.name;
+  ageParagraph.textContent = user.subject;
+  emailParagraph.textContent = user.email;
+  addressParagraph.textContent = user.address;
+  element.append(heading, subjectParagraph, emailParagraph, addressParagraph);
+  users.append(element);
+}
+/*
+function checkLength(value, len) {
+  if (value.trim().length < len) {
+    return true;
+  } else {
+    return false;
+  }
+}*/
+
+document.addEventListener("keyup", (event) => {
+  if (nameCheck() && subjectCheck() && emailCheck() && addressCheck()) {
+    console.log("Value in all fields");
+    btn.disabled = false;
+  } else {
+    btn.disabled = true;
+  }
+});
+
+function nameCheck() {
+  /*
+  const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  return regex.test(fullName.value);*/
+  const regex = /\w\s\w/;
+  return regex.test(fullName.value);
+}
+
+function subjectCheck() {
+  /*
+  const subCode = /^[a-zA-Z0-9 ]{10,}+$/;
+  return subCode.test(address.value);*/
+  const temp = parseInt(subject.value);
+  if (temp >= 1 && temp <= 130) {
+    return true;
+  }
+  return false;
+}
+
+function emailCheck() {
+  /*
+  const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  return regEx.test(email.value);*/
+  const regEx = /@/;
+  return regEx.test(email.value);
+}
+
+function addressCheck() {
+  /*
+  const adrName = /^[a-zA-Z0-9 ]{5,}+$/;
+  return adrName.test(address.value);*/
+  const regex = /\w\s\w/;
+  return regex.test(fullName.value);
+}
+
 function validateForm() {
   preventDefault();
 
@@ -55,72 +121,6 @@ function validateForm() {
   } else {
     addressError.style.display = "block";
   }
-}
-
-function createUser(user) {
-  const element = document.createElement("div");
-  const heading = document.createElement("h3");
-  const subjectParagraph = document.createElement("p");
-  const emailParagraph = document.createElement("p");
-  const addressParagraph = document.createElement("p");
-  heading.textContent = user.name;
-  ageParagraph.textContent = user.subject;
-  emailParagraph.textContent = user.email;
-  addressParagraph.textContent = user.address;
-  element.append(heading, subjectParagraph, emailParagraph, addressParagraph);
-  users.append(element);
-}
-
-function checkLength(value, len) {
-  if (value.trim().length > len) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-document.addEventListener("keyup", (event) => {
-  if (nameCheck() && subjectCheck() && emailCheck() && addressCheck()) {
-    console.log("Value in all fields");
-    btn.disabled = false;
-  } else {
-    btn.disabled = true;
-  }
-});
-
-function nameCheck() {
-  const regex = /[a-zA-Z ]+$/;
-  return regex.test(fullName.value);
-}
-
-function subjectCheck() {
-  for (let i = 0; i < subject.value; i++) {
-    if (subject.value > 10) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  /*
-  const temp = parseInt(subject.value);
-  if (temp >= 1 && temp <= 130) {
-    return true;
-  }
-  return false;*/
-}
-
-function emailCheck() {
-  const regEx = /\S+@\S+\.\S+/;
-  const matchedPattern = regEx.test(email.value);
-  return matchedPattern;
-  /*
-  const regEx = /@/;
-  return regEx.test(email.value);*/
-}
-
-function addressCheck() {
-  const adrName = /\w\s\w/;
-  return adrName.test(address.value);
 }
 
 /*
