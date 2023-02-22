@@ -1,117 +1,4 @@
 // Form and submission
-/*
-const fullName = document.querySelector("#fullname");
-const nameError = document.querySelector("#fullname_error");
-
-const subject = document.querySelector("#subject");
-const subjectError = document.querySelector("#subject_error");
-
-const email = document.querySelector("#email");
-const mailError = document.querySelector("#email_error");
-
-const address = document.querySelector("#address");
-const addressError = document.querySelector("#address_error");
-
-const btn = document.querySelector("button");
-const form = document.querySelector("form");
-const users = document.querySelector(".users")
-
-form.addEventListener("submit", (event) => {
-  const user = {
-    name: fullName.value,
-    subject: subject.value,
-    email: email.value,
-    address: address.value,
-  };
-  
-  console.log(user);
-  alert(user);
-  event.preventDefault();
-  //createUser(user);
-});
-
-function createUser(user) {
-  const element = document.createElement("div");
-  const heading = document.createElement("h3");
-  const subjectParagraph = document.createElement("p");
-  const emailParagraph = document.createElement("p");
-  const addressParagraph = document.createElement("p");
-  heading.textContent = user.name;
-  ageParagraph.textContent = user.subject;
-  emailParagraph.textContent = user.email;
-  addressParagraph.textContent = user.address;
-  element.append(heading, subjectParagraph, emailParagraph, addressParagraph);
-  users.append(element);
-}
-
-document.addEventListener("keyup", (event) => {
-  if (nameCheck() && subjectCheck() && emailCheck() && addressCheck()) {
-    console.log("Value in all fields");
-    btn.disabled = false;
-  } else {
-    btn.disabled = true;
-  }
-});
-
-function nameCheck() {
-  //const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
-  //return regex.test(fullName.value);
-  const regex = /\w\s\w/;
-  return regex.test(fullName.value);
-}
-
-function subjectCheck() {
-  //const subCode = /^[a-zA-Z0-9 ]{10,}+$/;
-  //return subCode.test(address.value);
-  const temp = parseInt(subject.value);
-  if (temp >= 1 && temp <= 130) {
-    return true;
-  }
-  return false;
-}
-
-function emailCheck() {
-  //const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-  //return regEx.test(email.value);
-  const regEx = /@/;
-  return regEx.test(email.value);
-}
-
-function addressCheck() {
-  //const adrName = /^[a-zA-Z0-9 ]{5,}+$/;
-  //return adrName.test(address.value);
-  const regex = /\w\s\w/;
-  return regex.test(fullName.value);
-}
-
-function validateForm() {
-  preventDefault();
-
-  if (checkLength(fullName.value) === true) {
-    nameError.style.display = "none";
-  } else {
-    nameError.style.display = "block";
-  }
-
-  if (checkLength(subject.value) === true) {
-    subjectError.style.display = "none";
-  } else {
-    subjectError.style.display = "block";
-  }
-
-  if (checkLength(email.value) === true) {
-    mailError.style.display = "none";
-  } else {
-    mailError.style.display = "block";
-  }
-
-  if (checkLength(address.value) === true) {
-    addressError.style.display = "none";
-  } else {
-    addressError.style.display = "block";
-  }
-}
-*/
 
 const form = document.querySelector("#contact_form");
 
@@ -127,38 +14,85 @@ const emailError = document.querySelector("#email_error");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#address_error");
 
+const input = document.querySelector(".input_box");
+const btn = document.querySelector("#submit_btn");
+
 function validateForm(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (checkLength(fullname.value, 0) === true) {
-        fullnameError.style.display = "none";
-    } else {
-        fullnameError.style.display = "block";
-    }
+  if (checkLength(fullname.value, 0) === true) {
+    fullnameError.style.display = "none";
+    console.log(fullname.value);
+  } else {
+    fullnameError.style.display = "block";
+  }
 
-    if (checkLength(subject.value, 10) === true) {
-        subjectError.style.display = "none";
-    } else {
-        subjectError.style.display = "block";
-    }
+  if (checkLength(subject.value, 10) === true) {
+    subjectError.style.display = "none";
+    console.log(subject.value);
+  } else {
+    subjectError.style.display = "block";
+  }
 
-    if (validateEmail(email.value) === true) {
-        emailError.style.display = "none";
-    } else {
-        emailError.style.display = "block";
-    }
+  if (checkMail(email.value) === true) {
+    emailError.style.display = "none";
+    console.log(email.value);
+  } else {
+    emailError.style.display = "block";
+  }
 
-    if (checkLength(address.value, 25) === true) {
-      addressError.style.display = "none";
-    } else {
-      addressError.style.display = "block";
-    }
+  if (checkLength(address.value, 25) === true) {
+    addressError.style.display = "none";
+    console.log(address.value);
+  } else {
+    addressError.style.display = "block";
+  }
 
-    console.log(fullname.value, subject.value, email.value, address.value);
-    alert("Successfull submission");
+  if (checkLength(fullname.value, 0) === true 
+  && checkLength(subject.value, 10) === true 
+  && checkMail(email.value) === true 
+  && checkLength(address.value, 25) === true) {
+    alert("Submission is successfull");
+  }
+
+  /*
+  console.log(fullname.value);
+  console.log(subject.value);
+  console.log(email.value);
+  console.log(address.value);*/
+  // console.log(fullname.value, subject.value, email.value, address.value);
+
+  //alert("Submission is successfull");
 }
 
+/*
+function enableButton(event) {
+  if (checkLength(fullname.value).length > 0 
+  && checkLength(subject.value).length > 0 
+  && checkMail(email.value).length > 0
+  && checkLength(address.value).length > 0) {
+    console.log("Value in all fields");
+    btn.disabled = false;
+  } else {
+    btn.disabled = true;
+  }
+}
+*/
+btn.disabled = true;
+
+input.addEventListener("change", enableButton);
+
 form.addEventListener("submit", validateForm);
+
+function enableButton() {
+  if (document.querySelector(".input_box").value === "") {
+    btn.disabled = true;
+    btn.style.background = "#3c5c6d";
+  } else {
+    btn.disabled = false;
+    btn.style.background = "#2d1073";
+  }
+}
 
 function checkLength(value, len) {
     if (value.trim().length > len) {
@@ -168,8 +102,19 @@ function checkLength(value, len) {
     }
 }
 
-function validateEmail(email) {
+function checkMail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
+
+/*
+  Regex codes (trials)
+*/
+// Letters and numbers: const regex = /^[a-zA-Z0-9 ]{10,}+$/;
+
+// E-mail: const regEx = /@/;
+// E-mail: const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+
+// Address: const regex = /\w\s\w/;
+// Address: const regex = /^[a-zA-Z0-9 ]{5,}+$/;

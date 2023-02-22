@@ -1,3 +1,8 @@
+/*
+  Fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&display=swap');
+
 body {
   background-color: #2e2626;
   /*background: linear-gradient(#000000, #490505);*/
@@ -27,7 +32,7 @@ img {
 }
 
 .book_title {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Gentium Book Basic", serif;
   text-align: center;
   font-size: 50px;
   margin: 10px auto 30px auto;
@@ -36,6 +41,7 @@ img {
 
 .contact_link {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
   color: #34c9e7;
   text-decoration: none;
 }

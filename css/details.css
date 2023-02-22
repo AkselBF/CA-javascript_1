@@ -1,14 +1,46 @@
+/*
+  Fonts
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/*
+  font-family: "Lobster", cursive;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&display=swap');
+/*
+  font-family: "Gentium Book Basic", serif;
+*/
+
+
 body {
-  background-color: #ffffff;
+  background-color: #270a12;
+}
+
+.details_container {
+  justify-content: center;
+  align-items: center;
+}
+
+.specific_book_title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #e1c740;
+  font-family: "Lobster", cursive;
 }
 
 .details_image {
   height: 500px;
   background-repeat: no-repeat;
   background-size: 340px 500px;
+  background-position: center;
 }
 
 .details_author {
-  display: flex;
-  flex-direction: column;
+  color: #e1c740;
+  width: 340px;
+  white-space: pre-line;
+  margin: 20px auto 20px auto;
+  font-family: "Gentium Book Basic", serif;
+  font-size: larger;
 }

@@ -1,44 +1,14 @@
 /*
-body {
-  background-color: #e4e4e4;
-}
+  Fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/*
+  font-family: "Lobster", cursive;
+*/
 
-.contact_form {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 20px;
-  margin: 50px 3% 50px 3%;
-}
-
-.contact_form label {
-  margin: 10px auto 0 auto;
-  width: 500px;
-}
-
-#name_box {
-  margin-top: 30px;
-}
-
-#fullname, #subject, #email, #address {
-  margin: 0 auto 20px auto;
-  width: 500px;
-  border-radius: 5px;
-  border-color: #e4e4e4;
-}
-
-.submit_button {
-  margin: 20px auto 30px auto;
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-}
-
-.index_link {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-decoration: none;
-  color: #0d239e;
-}
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&display=swap');
+/*
+  font-family: "Gentium Book Basic", serif;
 */
 
 * {
@@ -48,7 +18,7 @@ body {
 body {
   padding: 20px 40px;
   font-family: sans-serif;
-  background: #ebebeb;
+  background: #541526;
 }
 
 .container {
@@ -56,10 +26,19 @@ body {
   margin: 0 auto;
 }
 
+.contact_title {
+  font-family: "Gentium Book Basic", serif;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+  color: #e1c740;
+}
+
 form {
   padding: 2em;
-  background: white;
-  border-radius: 1rem;
+  background: #c8c8c8; /*worn page color: #c4af86*/
+  border-radius: 15px;
+  margin-bottom: 50px;
 }
 
 input {
@@ -67,27 +46,39 @@ input {
   margin-top: 2px;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
+  border-color: #c8c8c8;
 }
 
 button {
-  background: rgb(11, 91, 133);
+  color: #ffffff;
+  background: #3c5c6d; /*#0b5b85*/ /*for enabled: #2d1073*/
+  font-size: medium;
   border: none;
   width: 200px;
-  padding: 1rem;
-  color: white;
-  margin-top: 10px;
+  padding: 15px;
+  margin-top: 30px;
   cursor: pointer;
-  border-radius: 0.2rem;
+  border-radius: 5px;
 }
 
 label {
   display: block;
-  margin-top: 1rem;
+  margin-top: 15px;
+  /*color: #e1c740;*/
 }
 
 .form-error {
   display: none;
-  color: red;
-  font-size: 0.9rem;
+  color: #c80000;
+  font-size: 15px;
   margin-top: 2px;
+}
+
+.to_main {
+  color: #e1c740;
+  font-weight: bold;
+  font-size: larger;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
