@@ -155,7 +155,7 @@ function validateForm(event) {
     }
 
     console.log(fullname.value, subject.value, email.value, address.value);
-    alert("Hello");
+    alert("Successfull submission");
 }
 
 form.addEventListener("submit", validateForm);
