@@ -12,7 +12,7 @@
   <script defer src="../javascript/contact.js"></script>
 </head>
 <body>
-  <form class="contact_form">
+  <!--<form class="contact_form">-->
     <!--
     <div>
       <label id="name_box" for="fullname">Name:</label>
@@ -23,14 +23,14 @@
       />
       <div class="form_error" id="fullname_error">Please enter your full name</div>
     </div>-->
-
+    <!--
     <label id="name_box" for="fullname">Name:</label>
     <input
       type="text"
       id="fullname"
       placeholder="Full name"
     />
-    <div class="form_error" id="fullname_error">Please enter your full name</div>
+    <div class="form_error" id="fullname_error">Please enter your full name</div>-->
 
     <!--
     <div>
@@ -42,14 +42,14 @@
       />
       <div class="form_error" id="subject_error">Please enter your subject number</div>
     </div>-->
-
+    <!--
     <label id="subject_box" for="subject">Subject:</label>
     <input
       type="text"
       id="subject"
       placeholder="Subject number"
     />
-    <div class="form_error" id="subject_error">Please enter your subject code</div>
+    <div class="form_error" id="subject_error">Please enter your subject code</div>-->
 
     <!--
     <div>
@@ -61,14 +61,14 @@
       />
       <div class="form_error" id="email_error">Please enter your E-mail</div>
     </div>-->
-
+    <!--
     <label id="email_box" for="email">E-mail:</label>
     <input
       type="text"
       id="email"
       placeholder="E-mail_address"
     />
-    <div class="form_error" id="email_error">Please enter your E-mail</div>
+    <div class="form_error" id="email_error">Please enter your E-mail</div>-->
 
     <!--
     <div>
@@ -80,7 +80,7 @@
       />
       <div class="form_error" id="address_error">Please enter your home address</div>
     </div>-->
-
+    <!--
     <label id="address_box" for="address">Address:</label>
     <input
       type="text"
@@ -89,10 +89,56 @@
     />
     <div class="form_error" id="address_error">Please enter your home address</div>
 
-    <button class="submit_button" disabled>Submit</button>
-  </form>
-  <a class="index_link" href="../index.html">Back to main page</a>
+    <button class="submit_button" disabled>Submit</button>-->
+    
+  <!--</form>
 
-  <div class="users"></div>
+  <div class="users"></div>-->
+
+  <main class="container">
+    <form id="contact_form">
+      <div>
+        <label>
+          Full name (required)
+          <input name="firstName" id="fullname" placeholder="Full name"/>
+        </label>
+        <div class="form-error" id="fullname_error">
+          Please enter your full name (first and last name)
+        </div>
+      </div>
+
+      <div>
+        <label>
+          Subject code (minimum 10 characters)
+          <input name="lastName" id="subject" placeholder="Subject code"/>
+        </label>
+        <div class="form-error" id="subject_error">
+          Your subject code must contain at least 10 characters
+        </div>
+      </div>
+
+      <div>
+        <label>
+          Email (required)
+          <input name="email" id="email" placeholder="E-mail"/>
+        </label>
+        <div class="form-error" id="email_error">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div>
+        <label>
+          Address (required)
+          <input name="address" id="address" placeholder="Home address"/>
+        </label>
+        <div class="form-error" id="address_error">
+          Your home address must contain at least 25 characters
+        </div>
+      </div>
+
+      <button id="submit_btn">Submit</button>
+    </form>
+  </main>
 </body>
 </html>
