@@ -17,8 +17,10 @@ const addressError = document.querySelector("#address_error");
 const message = document.querySelector(".message");
 const input = document.querySelector(".input_box");
 const btn = document.querySelector("#submit_btn");
+const loader = document.querySelector(".loader");
 
 function validateForm(event) {
+  loader.classList.add("show");
   event.preventDefault();
 
   if (checkLength(fullname.value, 0) === true) {

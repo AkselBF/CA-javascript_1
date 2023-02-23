@@ -6,13 +6,16 @@ const params = new URLSearchParams(queryString);
 const bookId = params.get("id");
 
 const url = "https://gutendex.com/books?ids=" + bookId;
+const loader = document.querySelector(".loader");
 
 async function fetchBook() {
+  loader.classList.add("show");
   const response = await fetch(url);
   const data = await response.json();
   console.log(data);
 
   createHTML(data);
+  loader.classList.remove("show");
 }
 
 fetchBook();

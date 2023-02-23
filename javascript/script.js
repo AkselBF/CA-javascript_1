@@ -30,7 +30,7 @@ async function getSearch() {
   loader.classList.remove("show");
 }
 
-getBooks();
+//getBooks();
 
 function addBook(book) {
   const container = document.querySelector(".books");
@@ -79,91 +79,5 @@ next.addEventListener("click", () => {
   document.querySelector(".books").innerHTML = "";
 
   getBooks();
-});
-*/
-
-/* Loader */
-/*
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-
-  loader.classList.add("loader-hidden");
-
-  loader.addEventListener("transitioned", () => {
-    document.body.removeChild("loader");
-  })
-});
-*/
-
-/* Previous code */
-/*
-const loader = document.querySelector(".loader");
-
-let page = 4;
-let searchValue = "";
-
-async function getCharacters() {
-  const startTime = Date.now();
-
-  loader.classList.add("show");
-  const response = await fetch(url + "s?page=" + page);
-  const result = await response.json();
-  console.log(result);
-
-  result.data.forEach((character) => addCharacter(character));
-  loader.classList.remove("show");
-
-  document.querySelector(".time").innerHTML = 
-  "Loading time: " + (Date.now() - startTime) + " ms";
-  console.log(Date.now() - startTime);
-}
-
-async function getSearch() {
-  loader.classList.add("show");
-  const response = await fetch(url + "?name=" + searchValue);
-  const result = await response.json();
-  console.log(result);
-
-  result.data.forEach((character) => addCharacter(character));
-  loader.classList.remove("show");
-}
-
-getCharacters();
-
-function addCharacter(character) {
-  const container = document.querySelector(".container");
-  const characterContainer = document.createElement("div");
-  const characterName = document.createElement("h3");
-  const img = document.createElement("img");
-  img.src = character.imageUrl;
-
-  characterName.textContent = character.name;
-  characterContainer.append(characterName, img);
-  container.append(characterContainer);
-}
-
-const prev = document.querySelector("#previous");
-const next = document.querySelector("#next");
-const searchBtn = document.querySelector("#search");
-
-searchBtn.addEventListener("click", () => {
-  searchValue = document.querySelector("#search-input").value;
-  console.log(searchValue);
-  document.querySelector(".container").innerHTML = "";
-  getSearch();
-});
-
-prev.addEventListener("click", () => {
-  page--;
-  document.querySelector(".container").innerHTML = "";
-
-  getCharacters();
-});
-
-next.addEventListener("click", () => {
-  page++;
-  document.querySelector(".container").innerHTML = "";
-
-  getCharacters();
 });
 */

@@ -1,4 +1,4 @@
-/*
+
 .loader {
   position: fixed;
   top: 0;
@@ -10,11 +10,11 @@
   align-items: center;
   background-color: #1c1817;
   transition: opacity 0.75s, visibility 0.75s;
+  visibility: hidden;
 }
 
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
+.show {
+  visibility: visible;
 }
 
 .loader::after {
@@ -35,4 +35,3 @@
     transform: rotate(1turn);
   }
 }
-*/

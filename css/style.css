@@ -54,17 +54,6 @@ img {
   margin: auto;
 }
 
-/*
-#previous, #next {
-  font-weight: bold;
-  color: #000000;
-  background-color: #d1c521;
-  border-color: #e7db34;
-  border-radius: 5px;
-  width: 80px;
-  margin-top: 30px;
-}*/
-
 .boxname {
   font-weight: bold;
   color: #e4e4e4;
@@ -100,3 +89,15 @@ img {
 .box, #search {
   display: inline-block;
 }
+
+/*
+#previous, #next {
+  font-weight: bold;
+  color: #000000;
+  background-color: #d1c521;
+  border-color: #e7db34;
+  border-radius: 5px;
+  width: 80px;
+  margin-top: 30px;
+}
+*/
