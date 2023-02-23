@@ -9,7 +9,7 @@ The link to the contact page is pretty self explanatory. Details about the
 contact page will be noted in "readContact.md".
 
 The more relevant feature is the search bar and the "Run"-button that runs it. 
-When searching for a book title, such as: "room" or "romeo" then click
+When searching for a book title, such as: "room" then click
 on the "Run"-button, books with similar titles will appear. 
 Results can still appear by searching nothing.
 
