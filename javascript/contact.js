@@ -14,6 +14,7 @@ const emailError = document.querySelector("#email_error");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#address_error");
 
+const message = document.querySelector(".message");
 const input = document.querySelector(".input_box");
 const btn = document.querySelector("#submit_btn");
 
@@ -53,31 +54,10 @@ function validateForm(event) {
   && checkMail(email.value) === true 
   && checkLength(address.value, 25) === true) {
     alert("Submission is successfull");
-  }
-
-  /*
-  console.log(fullname.value);
-  console.log(subject.value);
-  console.log(email.value);
-  console.log(address.value);*/
-  // console.log(fullname.value, subject.value, email.value, address.value);
-
-  //alert("Submission is successfull");
-}
-
-/*
-function enableButton(event) {
-  if (checkLength(fullname.value).length > 0 
-  && checkLength(subject.value).length > 0 
-  && checkMail(email.value).length > 0
-  && checkLength(address.value).length > 0) {
-    console.log("Value in all fields");
-    btn.disabled = false;
-  } else {
-    btn.disabled = true;
+    message.innerHTML = `<h2 class="success_message">Passed</h2>`;
   }
 }
-*/
+
 btn.disabled = true;
 
 input.addEventListener("change", enableButton);
@@ -87,7 +67,7 @@ form.addEventListener("submit", validateForm);
 function enableButton() {
   if (document.querySelector(".input_box").value === "") {
     btn.disabled = true;
-    btn.style.background = "#3c5c6d";
+    btn.style.background = "#8099a5";
   } else {
     btn.disabled = false;
     btn.style.background = "#2d1073";

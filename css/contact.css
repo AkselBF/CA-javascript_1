@@ -1,15 +1,5 @@
-/*
-  Fonts
-*/
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-/*
-  font-family: "Lobster", cursive;
-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&display=swap');
-/*
-  font-family: "Gentium Book Basic", serif;
-*/
+@import url("fonts.css"); /* for fonts */
 
 * {
   box-sizing: border-box;
@@ -35,7 +25,7 @@ body {
 }
 
 form {
-  padding: 2em;
+  padding: 32px;
   background: #c8c8c8; /*worn page color: #c4af86*/
   border-radius: 15px;
   margin-bottom: 50px;
@@ -52,7 +42,7 @@ input {
 
 button {
   color: #ffffff;
-  background: #3c5c6d; /*#0b5b85*/ /*for enabled: #2d1073*/
+  background: #8099a5; /*#0b5b85*/ /*for enabled: #2d1073*/
   font-size: medium;
   border: none;
   width: 200px;
@@ -68,6 +58,11 @@ label {
   /*color: #e1c740;*/
 }
 
+.success_message {
+  color: #e1c740;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .form-error {
   display: none;
   color: #c80000;
@@ -78,7 +73,7 @@ label {
 .to_main {
   color: #e1c740;
   font-weight: bold;
-  font-size: larger;
+  font-size: 25px;
   text-decoration: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

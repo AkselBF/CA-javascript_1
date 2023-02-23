@@ -9,21 +9,26 @@ const url = "https://gutendex.com/books/";
 
 let page = 1;
 let searchValue = "";
+const loader = document.querySelector(".loader");
 
 async function getBooks() {
+  loader.classList.add("show");
   const response = await fetch(url + "?page=" + page);
   const result = await response.json();
   console.log(result);
+
+  loader.classList.remove("show");
 }
 
 async function getSearch() {
+  loader.classList.add("show");
   const response = await fetch(url + "?search=" + searchValue);
   const result = await response.json();
   console.log(result);
 
   result.results.forEach((book) => addBook(book));
+  loader.classList.remove("show");
 }
-// If an image doesn't show up, try the "try" and "catch" method.
 
 getBooks();
 
@@ -61,6 +66,7 @@ searchBtn.addEventListener("click", () => {
   getSearch();
 });
 
+/*
 prev.addEventListener("click", () => {
   page--;
   document.querySelector(".books").innerHTML = "";
@@ -74,11 +80,24 @@ next.addEventListener("click", () => {
 
   getBooks();
 });
+*/
 
-
-
+/* Loader */
 /*
-const loader = document.querySelector(".loading p");
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader-hidden");
+
+  loader.addEventListener("transitioned", () => {
+    document.body.removeChild("loader");
+  })
+});
+*/
+
+/* Previous code */
+/*
+const loader = document.querySelector(".loader");
 
 let page = 4;
 let searchValue = "";

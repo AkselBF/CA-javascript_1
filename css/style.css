@@ -1,7 +1,5 @@
-/*
-  Fonts
-*/
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@0;1&display=swap');
+
+@import url("fonts.css"); /* for fonts */
 
 body {
   background-color: #2e2626;
@@ -39,13 +37,24 @@ img {
   color: #e7db34;
 }
 
-.contact_link {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: larger;
-  color: #34c9e7;
-  text-decoration: none;
+.events {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto;
 }
 
+.contact_link {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  text-align: left;
+  color: #34c9e7;
+  text-decoration: none;
+  margin: auto;
+}
+
+/*
 #previous, #next {
   font-weight: bold;
   color: #000000;
@@ -54,7 +63,7 @@ img {
   border-radius: 5px;
   width: 80px;
   margin-top: 30px;
-}
+}*/
 
 .boxname {
   font-weight: bold;
@@ -62,16 +71,32 @@ img {
 }
 
 .box {
-  border-radius: 5px;
+  width: 300px;
+  margin: 30px auto 40px auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
   background-color: #e4e4e4;
-  border-color: #ffffff;
+  border-color: #c8c8c8;
 }
 
 #search {
+  font-size: 16px;
   font-weight: bold;
   color: #000000;
   background-color: #d1c521;
   border-color: #e7db34;
-  border-radius: 5px;
-  width: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.box, .contact_link {
+  display: flex;
+  flex-direction: column;
+}
+
+.box, #search {
+  display: inline-block;
 }
