@@ -1,4 +1,6 @@
-// Form and submission
+/*
+  Form and submission
+*/
 
 const form = document.querySelector("#contact_form");
 
@@ -19,10 +21,11 @@ const input = document.querySelector(".input_box");
 const btn = document.querySelector("#submit_btn");
 const loader = document.querySelector(".loader");
 
+// Checks if the form passes
 function validateForm(event) {
-  loader.classList.add("show");
   event.preventDefault();
 
+  // Checks the Full name input
   if (checkLength(fullname.value, 0) === true) {
     fullnameError.style.display = "none";
     console.log(fullname.value);
@@ -30,6 +33,7 @@ function validateForm(event) {
     fullnameError.style.display = "block";
   }
 
+  // Checks the Subject input
   if (checkLength(subject.value, 10) === true) {
     subjectError.style.display = "none";
     console.log(subject.value);
@@ -37,6 +41,7 @@ function validateForm(event) {
     subjectError.style.display = "block";
   }
 
+  // Checks the E-mail input
   if (checkMail(email.value) === true) {
     emailError.style.display = "none";
     console.log(email.value);
@@ -44,6 +49,7 @@ function validateForm(event) {
     emailError.style.display = "block";
   }
 
+  // Checks the Address input
   if (checkLength(address.value, 25) === true) {
     addressError.style.display = "none";
     console.log(address.value);
@@ -51,6 +57,7 @@ function validateForm(event) {
     addressError.style.display = "block";
   }
 
+  // If every input is successfull, a message pops out
   if (checkLength(fullname.value, 0) === true 
   && checkLength(subject.value, 10) === true 
   && checkMail(email.value) === true 
@@ -63,9 +70,9 @@ function validateForm(event) {
 btn.disabled = true;
 
 input.addEventListener("change", enableButton);
-
 form.addEventListener("submit", validateForm);
 
+// If ".input_box" has something in it, the button can be clicked
 function enableButton() {
   if (document.querySelector(".input_box").value === "") {
     btn.disabled = true;
@@ -76,6 +83,7 @@ function enableButton() {
   }
 }
 
+// Checks the amount of characters
 function checkLength(value, len) {
     if (value.trim().length > len) {
         return true;
@@ -84,19 +92,9 @@ function checkLength(value, len) {
     }
 }
 
+// Checks if the email is properly formulated
 function checkMail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
-
-/*
-  Regex codes (trials)
-*/
-// Letters and numbers: const regex = /^[a-zA-Z0-9 ]{10,}+$/;
-
-// E-mail: const regEx = /@/;
-// E-mail: const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-
-// Address: const regex = /\w\s\w/;
-// Address: const regex = /^[a-zA-Z0-9 ]{5,}+$/;

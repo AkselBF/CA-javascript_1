@@ -1,9 +1,6 @@
 /*
-  Public api url (different ones)
+  Public api url: Gutendex
 */
-
-// "https://gutendex.com/books"
-// "https://gutendex.com/books/?page=2"
 
 const url = "https://gutendex.com/books/";
 
@@ -11,6 +8,7 @@ let page = 1;
 let searchValue = "";
 const loader = document.querySelector(".loader");
 
+// Get the books from the api url
 async function getBooks() {
   loader.classList.add("show");
   const response = await fetch(url + "?page=" + page);
@@ -20,6 +18,7 @@ async function getBooks() {
   loader.classList.remove("show");
 }
 
+// Search bar
 async function getSearch() {
   loader.classList.add("show");
   const response = await fetch(url + "?search=" + searchValue);
@@ -32,6 +31,7 @@ async function getSearch() {
 
 //getBooks();
 
+// Get the data from the books in the api url
 function addBook(book) {
   const container = document.querySelector(".books");
   const bookContainer = document.createElement("div");
@@ -55,10 +55,13 @@ function addBook(book) {
   document.querySelector("body").append(bookContainer);
 }
 
+/*
 const prev = document.querySelector("#previous");
 const next = document.querySelector("#next");
+*/
 const searchBtn = document.querySelector("#search");
 
+// Gets the result from api by searching
 searchBtn.addEventListener("click", () => {
   searchValue = document.querySelector("#search-input").value;
   console.log(searchValue);

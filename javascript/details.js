@@ -1,5 +1,9 @@
+/*
+  Chosen book from main page/index.html
+*/
+
 console.log(localStorage.getItem("id"));
-//let id;
+
 const detailContainer = document.querySelector(".book_details");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -8,6 +12,7 @@ const bookId = params.get("id");
 const url = "https://gutendex.com/books?ids=" + bookId;
 const loader = document.querySelector(".loader");
 
+// Gets the chosen book from previous page
 async function fetchBook() {
   loader.classList.add("show");
   const response = await fetch(url);
@@ -20,6 +25,7 @@ async function fetchBook() {
 
 fetchBook();
 
+// Get the api data
 function createHTML(data) {
   detailContainer.innerHTML = `
   <h1 class="specific_book_title">${data.results[0].title}</h1>
