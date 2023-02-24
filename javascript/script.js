@@ -37,6 +37,10 @@ function addBook(book) {
   const bookContainer = document.createElement("div");
   const bookName = document.createElement("h2");
   const bookLink = document.createElement("a");
+
+  bookContainer.className = "book_container";
+  bookName.className = "book_name";
+  bookLink.className = "book_link";
   const img = document.createElement("img");
   img.src = book.formats["image/jpeg"];
 

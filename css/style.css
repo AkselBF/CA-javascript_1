@@ -23,6 +23,18 @@ img {
   display: flex;
 }
 
+.book_name {
+  display: block;
+  width: 400px;
+  margin: 40px auto 20px auto;
+}
+
+.book_link {
+  display: block;
+  width: 300px;
+  margin: auto;
+}
+
 .books {
   justify-content: center;
   align-items: center;
