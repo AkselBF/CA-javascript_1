@@ -51,7 +51,9 @@ img {
   text-align: left;
   color: #34c9e7;
   text-decoration: none;
-  margin: auto;
+  margin-left: 5%;
+  width: 150px;
+  padding: 10px;
 }
 
 .boxname {
